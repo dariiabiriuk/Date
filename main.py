@@ -1,3 +1,5 @@
+import datetime
+
 class Date:
 
     """
@@ -93,7 +95,7 @@ class Date:
         :return: 'True' if the current object's date (self) is later than
         the 'other' object's date or 'False' if the current object's
         date is not later than the 'other' object's date (or if 'other'
-        is not an instance of the Date class.
+        is not an instance of the Date class).
         """
         if not isinstance(other, Date):
             return False
@@ -160,24 +162,25 @@ if __name__ == "__main__":
         data1 = Date(28, 9, 2007)
         print("data1:", data1)
     except ValueError as e:
-        print("Помилка при створенні data1:", e)
+        print("Error creating data1:", e)
 
     try:
         data2 = Date(3, 11, 1986)
         print("data2:", data2)
     except ValueError as e:
-        print("Помилка при створенні data2:", e)
+        print("Error creating data2:", e)
 
     try:
         data3 = Date(22, 11, 2002)
         print("data3:", data3)
     except ValueError as e:
-        print("Помилка при створенні data3:", e)
+        print("Error creating data3:", e)
 
     try:
-        date4 = Date(31, 2, 2020)
+        data4 = Date(31, 2, 2020)
+        print("data4:", data4)
     except ValueError as e:
-        print("Помилка при створенні date4:", e)
+        print("Error creating data4:", e)
 
 print("data1 == data2:", data1 == data2)
 print("data1 < data2:", data1 < data2)
@@ -187,4 +190,3 @@ print("data1 leap year:", data1.leap_year(data1._year))
 print("data2 leap year:", data2.leap_year(data2._year))
 print("Days in month for data1:", data1.days_in_month(data1._month, data1._year))
 print("Day of year for data1:", data1.day_of_year())
-
