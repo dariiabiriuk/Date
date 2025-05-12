@@ -9,7 +9,7 @@
 - Отримання кількості днів у конкретному місяці.
 - Обчислення порядкового номера дня в році.
 ## Структура класу
-### __init___(self, day: int, year: int)
+> ### __init___(self, day: int, month: int, year: int):
 Після перевірки:
 - чи всі аргументи є цілими числами;
 - чи рік не є від'ємним числом;
@@ -26,4 +26,46 @@
 Порівнює дати: True, якщо поточна дата більша за іншу.
 > ### __le__(self, other)
 Порівнює дати: True, якщо поточна дата більша за іншу.
+> ### leap_year(self, year: int) -> bool:
+Перевіряє рік на високосність.
+> ### days_in_month(self, month: int, year: int) -> int:
+Визначає кількість днів у тому чи іншому місяці.
+> ### day_of_year(self) -> int:
+Визначає порядковий номер дня у році.
+> ### if __name__ == "__main__":
+Демонструє створення об'єктів класу Date, перевірку валідності дат, а також використання основних методів класу для роботи з датами.
+## Інструкції щодо використання
+Аби почати роботу імпортуйте клас у свій Python-проєкт:
+```python
+from Date import Date
+```
+Потім створіть об'єкти дат:
+```python
+data1 = Date(28, 9, 2007)
+print("data1:", data1)
+data2 = Date(3, 11, 1986)
+print("data2:", data2)
+```
+Здійсніть порівняння дат:
+```python
+print("data1 == data2:", data1 == data2)
+print("data1 < data2:", data1 < data2)
+print("data1 > data2:", data1 > data2)
+print("data1 <= data2:", data1 <= data2)
+```
+Перевірка високосного року:
+```python
+print("data1 leap year:", data1.leap_year(data1._year))
+print("data2 leap year:", data2.leap_year(data2._year))
+```
+Визначення кількості днів у місяці:
+```python
+print("Days in month for data1:", data1.days_in_month(data1._month, data1._year))
+```
+Визначення порядкового номеру дня у році:
+```python
+print("Day of year for data1:", data1.day_of_year())
+```
+## Бірюк Дарія, 11ІПЗ
+
 
